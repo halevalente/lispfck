@@ -31,7 +31,7 @@ parser = ox.make_parser([
     ('term : atom term', comp),
     ('term : atom', term),
     ('atom : expr', atom),
-    ('atom : PLAIN_TEXT'; atom),
+    ('atom : PLAIN_TEXT', atom),
     ('atom : NUMBER', atom),
 ], tokens)
 
