@@ -5,14 +5,14 @@ import pprint
 lexer = ox.make_lexer([
     ('OPEN_P', r'\('),
     ('CLOSE_P', r'\)'),
-    ('TEXT', r'[-a-zA-Z]+'),
+    ('PLAIN_TEXT', r'[-a-zA-Z]+'),
     ('NUMBER', r'[0-9]+'),
     ('ignore_COMMENT', r';[^\n]*'),
     ('ignore_NEWLINE', r'\s+'),
 ])
 
 tokens = [
-    'TEXT',
+    'PLAIN_TEXT',
     'NUMBER',
     'OPEN_P',
     'CLOSE_P'
@@ -31,6 +31,6 @@ parser = ox.make_parser([
     ('term : atom term', comp),
     ('term : atom', term),
     ('atom : expr', atom),
-    ('atom : TEXT'; atom),
+    ('atom : PLAIN_TEXT'; atom),
     ('atom : NUMBER', atom),
 ], tokens)
