@@ -25,7 +25,7 @@ pare = lambda x, y: '()'
 expr = lambda x, y, z: y
 
 
-parser = ox.make_PARENTHESISarser([
+parser = ox.make_parser([
     ('expr : OPEN_PARENTHESIS term CLOSE_PARENTHESIS', expr),
     ('expr : OPEN_PARENTHESIS CLOSE_PARENTHESIS', pare),
     ('term : atom term', comp),
